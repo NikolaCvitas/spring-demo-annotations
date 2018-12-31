@@ -26,6 +26,10 @@ public class AppUserImpl  {
 	
 
 
+	/**
+	 * Select all from APP_USER.
+	 * @return
+	 */
 	public ArrayList<AppUser> getAllAppUser() {
 		
 		ArrayList<AppUser> list = new ArrayList<AppUser>();
@@ -59,5 +63,7 @@ public class AppUserImpl  {
 		}
 		return list;
 	}
+	
+	
 
 }

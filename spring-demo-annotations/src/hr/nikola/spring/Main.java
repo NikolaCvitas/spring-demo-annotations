@@ -7,9 +7,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import hr.nikola.spring.dao.AppUserImpl;
 import hr.nikola.spring.database.DatabaseHandler;
 import hr.nikola.spring.entity.AppUser;
+import hr.nikola.spring.luv2code.Coach;
 
 
-
+ 
 public class Main {
 	
 	public static void main(String[] args) {
@@ -30,6 +31,17 @@ public class Main {
 		for(AppUser element:appList) {
 			System.out.println(" "+element.toString());
 		}
+		
+		
+		Coach tCoach = context.getBean("tennisCoach", Coach.class);
+		System.out.println(tCoach.getDailyWorkout());
+		System.out.println(tCoach.getDailyFortune());
+		
+		Coach alphaCoach = context.getBean("tennisCoach", Coach.class);
+		
+		boolean result =( tCoach == alphaCoach);
+		
+		System.out.println("result: "+result);
 
 	}
 
