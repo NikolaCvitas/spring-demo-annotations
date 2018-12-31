@@ -7,8 +7,8 @@ public class FortuneService implements HappyFortuneService {
 
 	@Override
 	public String getFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return "Great Fortune!!";
 	}
 
 }
