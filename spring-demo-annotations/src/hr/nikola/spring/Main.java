@@ -47,6 +47,12 @@ public class Main {
 		AppUser userById = appUser.getAppUserById(new Long("1"));
 		
 		System.out.println("userById: "+userById.toString());
+		
+		ArrayList<AppUser> appListByType = appUser.getAppUserByType("1");
+		
+		for(AppUser element:appListByType) {
+			System.out.println(" "+element.toString());
+		}
 
 	}
 

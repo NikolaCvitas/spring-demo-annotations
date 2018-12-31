@@ -108,5 +108,46 @@ public class AppUserImpl  {
 	}
 	
 	
+	/**
+	 * Select from APP_USER by type.
+	 * @return
+	 */
+	public ArrayList<AppUser> getAppUserByType(String type) {
+		
+		ArrayList<AppUser> list = new ArrayList<AppUser>();
+		
+		String selectSQL = "SELECT id, type, created_on, name, login, password FROM "+schema+".app_user "
+				+ " WHERE type = ? ";
+		
+        try {
+			PreparedStatement preparedStatement = conn.prepareStatement(selectSQL);
+			preparedStatement.setString(1, type);
+			
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			while(rs.next()) {
+				
+				AppUser au = new AppUser();
+				au.setId(rs.getBigDecimal("id"));
+				au.setType(rs.getString("type"));
+				au.setCreated_on(rs.getTimestamp("created_on"));
+				au.setName(rs.getString("name"));
+				au.setLogin(rs.getString("login"));
+				au.setPassword(rs.getString("password"));
+				
+				list.add(au);
+				
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
 
 }
