@@ -1,5 +1,6 @@
 package hr.nikola.spring;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -42,6 +43,10 @@ public class Main {
 		boolean result =( tCoach == alphaCoach);
 		
 		System.out.println("result: "+result);
+		
+		AppUser userById = appUser.getAppUserById(new Long("1"));
+		
+		System.out.println("userById: "+userById.toString());
 
 	}
 
